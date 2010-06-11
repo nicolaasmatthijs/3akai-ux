@@ -65,6 +65,657 @@ var Widgets = {
             "personalportal":true,
             "url":"/devwidgets/activitystream/activitystream.html"
         },
+        "activitystream1": {
+            "description": "Activity Stream Widget - 1",
+            "hasSettings": true,
+            "img": "/devwidgets/activitystream1/images/activitystream_icon.png",
+            "id": "activitystream1",
+            "i18n": {
+                "default": "/devwidgets/activitystream1/bundles/default.json",
+                "en_US": "/devwidgets/activitystream1/bundles/en_US.json"
+            },
+            "name": "Activity Stream - 1",
+            "personalportal": true,
+            "url": "/devwidgets/activitystream1/activitystream1.html"
+        },
+        "activitystream2": {
+            "description": "Activity Stream Widget - 2",
+            "hasSettings": true,
+            "img": "/devwidgets/activitystream2/images/activitystream_icon.png",
+            "id": "activitystream2",
+            "i18n": {
+                "default": "/devwidgets/activitystream2/bundles/default.json",
+                "en_US": "/devwidgets/activitystream2/bundles/en_US.json"
+            },
+            "name": "Activity Stream - 2",
+            "personalportal": true,
+            "url": "/devwidgets/activitystream2/activitystream2.html"
+        },
+        "activitystream3": {
+            "description": "Activity Stream Widget - 3",
+            "hasSettings": true,
+            "img": "/devwidgets/activitystream3/images/activitystream_icon.png",
+            "id": "activitystream3",
+            "i18n": {
+                "default": "/devwidgets/activitystream3/bundles/default.json",
+                "en_US": "/devwidgets/activitystream3/bundles/en_US.json"
+            },
+            "name": "Activity Stream - 3",
+            "personalportal": true,
+            "url": "/devwidgets/activitystream3/activitystream3.html"
+        },
+        "activitystream4": {
+            "description": "Activity Stream Widget - 4",
+            "hasSettings": true,
+            "img": "/devwidgets/activitystream4/images/activitystream_icon.png",
+            "id": "activitystream4",
+            "i18n": {
+                "default": "/devwidgets/activitystream4/bundles/default.json",
+                "en_US": "/devwidgets/activitystream4/bundles/en_US.json"
+            },
+            "name": "Activity Stream - 4",
+            "personalportal": true,
+            "url": "/devwidgets/activitystream4/activitystream4.html"
+        },
+        "activitystream5": {
+            "description": "Activity Stream Widget - 5",
+            "hasSettings": true,
+            "img": "/devwidgets/activitystream5/images/activitystream_icon.png",
+            "id": "activitystream5",
+            "i18n": {
+                "default": "/devwidgets/activitystream5/bundles/default.json",
+                "en_US": "/devwidgets/activitystream5/bundles/en_US.json"
+            },
+            "name": "Activity Stream - 5",
+            "personalportal": true,
+            "url": "/devwidgets/activitystream5/activitystream5.html"
+        },
+        "activitystream6": {
+            "description": "Activity Stream Widget - 6",
+            "hasSettings": true,
+            "img": "/devwidgets/activitystream6/images/activitystream_icon.png",
+            "id": "activitystream6",
+            "i18n": {
+                "default": "/devwidgets/activitystream6/bundles/default.json",
+                "en_US": "/devwidgets/activitystream6/bundles/en_US.json"
+            },
+            "name": "Activity Stream - 6",
+            "personalportal": true,
+            "url": "/devwidgets/activitystream6/activitystream6.html"
+        },
+        "activitystream7": {
+            "description": "Activity Stream Widget - 7",
+            "hasSettings": true,
+            "img": "/devwidgets/activitystream7/images/activitystream_icon.png",
+            "id": "activitystream7",
+            "i18n": {
+                "default": "/devwidgets/activitystream7/bundles/default.json",
+                "en_US": "/devwidgets/activitystream7/bundles/en_US.json"
+            },
+            "name": "Activity Stream - 7",
+            "personalportal": true,
+            "url": "/devwidgets/activitystream7/activitystream7.html"
+        },
+        "activitystream8": {
+            "description": "Activity Stream Widget - 8",
+            "hasSettings": true,
+            "img": "/devwidgets/activitystream8/images/activitystream_icon.png",
+            "id": "activitystream8",
+            "i18n": {
+                "default": "/devwidgets/activitystream8/bundles/default.json",
+                "en_US": "/devwidgets/activitystream8/bundles/en_US.json"
+            },
+            "name": "Activity Stream - 8",
+            "personalportal": true,
+            "url": "/devwidgets/activitystream8/activitystream8.html"
+        },
+        "activitystream9": {
+            "description": "Activity Stream Widget - 9",
+            "hasSettings": true,
+            "img": "/devwidgets/activitystream9/images/activitystream_icon.png",
+            "id": "activitystream9",
+            "i18n": {
+                "default": "/devwidgets/activitystream9/bundles/default.json",
+                "en_US": "/devwidgets/activitystream9/bundles/en_US.json"
+            },
+            "name": "Activity Stream - 9",
+            "personalportal": true,
+            "url": "/devwidgets/activitystream9/activitystream9.html"
+        },
+        "activitystream10": {
+            "description": "Activity Stream Widget - 10",
+            "hasSettings": true,
+            "img": "/devwidgets/activitystream10/images/activitystream_icon.png",
+            "id": "activitystream10",
+            "i18n": {
+                "default": "/devwidgets/activitystream10/bundles/default.json",
+                "en_US": "/devwidgets/activitystream10/bundles/en_US.json"
+            },
+            "name": "Activity Stream - 10",
+            "personalportal": true,
+            "url": "/devwidgets/activitystream10/activitystream10.html"
+        },
+        "activitystream11": {
+            "description": "Activity Stream Widget - 11",
+            "hasSettings": true,
+            "img": "/devwidgets/activitystream11/images/activitystream_icon.png",
+            "id": "activitystream11",
+            "i18n": {
+                "default": "/devwidgets/activitystream11/bundles/default.json",
+                "en_US": "/devwidgets/activitystream11/bundles/en_US.json"
+            },
+            "name": "Activity Stream - 11",
+            "personalportal": true,
+            "url": "/devwidgets/activitystream11/activitystream11.html"
+        },
+        "activitystream12": {
+            "description": "Activity Stream Widget - 12",
+            "hasSettings": true,
+            "img": "/devwidgets/activitystream12/images/activitystream_icon.png",
+            "id": "activitystream12",
+            "i18n": {
+                "default": "/devwidgets/activitystream12/bundles/default.json",
+                "en_US": "/devwidgets/activitystream12/bundles/en_US.json"
+            },
+            "name": "Activity Stream - 12",
+            "personalportal": true,
+            "url": "/devwidgets/activitystream12/activitystream12.html"
+        },
+        "activitystream13": {
+            "description": "Activity Stream Widget - 13",
+            "hasSettings": true,
+            "img": "/devwidgets/activitystream13/images/activitystream_icon.png",
+            "id": "activitystream13",
+            "i18n": {
+                "default": "/devwidgets/activitystream13/bundles/default.json",
+                "en_US": "/devwidgets/activitystream13/bundles/en_US.json"
+            },
+            "name": "Activity Stream - 13",
+            "personalportal": true,
+            "url": "/devwidgets/activitystream13/activitystream13.html"
+        },
+        "activitystream14": {
+            "description": "Activity Stream Widget - 14",
+            "hasSettings": true,
+            "img": "/devwidgets/activitystream14/images/activitystream_icon.png",
+            "id": "activitystream14",
+            "i18n": {
+                "default": "/devwidgets/activitystream14/bundles/default.json",
+                "en_US": "/devwidgets/activitystream14/bundles/en_US.json"
+            },
+            "name": "Activity Stream - 14",
+            "personalportal": true,
+            "url": "/devwidgets/activitystream14/activitystream14.html"
+        },
+        "activitystream15": {
+            "description": "Activity Stream Widget - 15",
+            "hasSettings": true,
+            "img": "/devwidgets/activitystream15/images/activitystream_icon.png",
+            "id": "activitystream15",
+            "i18n": {
+                "default": "/devwidgets/activitystream15/bundles/default.json",
+                "en_US": "/devwidgets/activitystream15/bundles/en_US.json"
+            },
+            "name": "Activity Stream - 15",
+            "personalportal": true,
+            "url": "/devwidgets/activitystream15/activitystream15.html"
+        },
+        "activitystream16": {
+            "description": "Activity Stream Widget - 16",
+            "hasSettings": true,
+            "img": "/devwidgets/activitystream16/images/activitystream_icon.png",
+            "id": "activitystream16",
+            "i18n": {
+                "default": "/devwidgets/activitystream16/bundles/default.json",
+                "en_US": "/devwidgets/activitystream16/bundles/en_US.json"
+            },
+            "name": "Activity Stream - 16",
+            "personalportal": true,
+            "url": "/devwidgets/activitystream16/activitystream16.html"
+        },
+        "activitystream17": {
+            "description": "Activity Stream Widget - 17",
+            "hasSettings": true,
+            "img": "/devwidgets/activitystream17/images/activitystream_icon.png",
+            "id": "activitystream17",
+            "i18n": {
+                "default": "/devwidgets/activitystream17/bundles/default.json",
+                "en_US": "/devwidgets/activitystream17/bundles/en_US.json"
+            },
+            "name": "Activity Stream - 17",
+            "personalportal": true,
+            "url": "/devwidgets/activitystream17/activitystream17.html"
+        },
+        "activitystream18": {
+            "description": "Activity Stream Widget - 18",
+            "hasSettings": true,
+            "img": "/devwidgets/activitystream18/images/activitystream_icon.png",
+            "id": "activitystream18",
+            "i18n": {
+                "default": "/devwidgets/activitystream18/bundles/default.json",
+                "en_US": "/devwidgets/activitystream18/bundles/en_US.json"
+            },
+            "name": "Activity Stream - 18",
+            "personalportal": true,
+            "url": "/devwidgets/activitystream18/activitystream18.html"
+        },
+        "activitystream19": {
+            "description": "Activity Stream Widget - 19",
+            "hasSettings": true,
+            "img": "/devwidgets/activitystream19/images/activitystream_icon.png",
+            "id": "activitystream19",
+            "i18n": {
+                "default": "/devwidgets/activitystream19/bundles/default.json",
+                "en_US": "/devwidgets/activitystream19/bundles/en_US.json"
+            },
+            "name": "Activity Stream - 19",
+            "personalportal": true,
+            "url": "/devwidgets/activitystream19/activitystream19.html"
+        },
+        "activitystream20": {
+            "description": "Activity Stream Widget - 20",
+            "hasSettings": true,
+            "img": "/devwidgets/activitystream20/images/activitystream_icon.png",
+            "id": "activitystream20",
+            "i18n": {
+                "default": "/devwidgets/activitystream20/bundles/default.json",
+                "en_US": "/devwidgets/activitystream20/bundles/en_US.json"
+            },
+            "name": "Activity Stream - 20",
+            "personalportal": true,
+            "url": "/devwidgets/activitystream20/activitystream20.html"
+        },
+        "activitystream21": {
+            "description": "Activity Stream Widget - 21",
+            "hasSettings": true,
+            "img": "/devwidgets/activitystream21/images/activitystream_icon.png",
+            "id": "activitystream21",
+            "i18n": {
+                "default": "/devwidgets/activitystream21/bundles/default.json",
+                "en_US": "/devwidgets/activitystream21/bundles/en_US.json"
+            },
+            "name": "Activity Stream - 21",
+            "personalportal": true,
+            "url": "/devwidgets/activitystream21/activitystream21.html"
+        },
+        "activitystream22": {
+            "description": "Activity Stream Widget - 22",
+            "hasSettings": true,
+            "img": "/devwidgets/activitystream22/images/activitystream_icon.png",
+            "id": "activitystream22",
+            "i18n": {
+                "default": "/devwidgets/activitystream22/bundles/default.json",
+                "en_US": "/devwidgets/activitystream22/bundles/en_US.json"
+            },
+            "name": "Activity Stream - 22",
+            "personalportal": true,
+            "url": "/devwidgets/activitystream22/activitystream22.html"
+        },
+        "activitystream23": {
+            "description": "Activity Stream Widget - 23",
+            "hasSettings": true,
+            "img": "/devwidgets/activitystream23/images/activitystream_icon.png",
+            "id": "activitystream23",
+            "i18n": {
+                "default": "/devwidgets/activitystream23/bundles/default.json",
+                "en_US": "/devwidgets/activitystream23/bundles/en_US.json"
+            },
+            "name": "Activity Stream - 23",
+            "personalportal": true,
+            "url": "/devwidgets/activitystream23/activitystream23.html"
+        },
+        "activitystream24": {
+            "description": "Activity Stream Widget - 24",
+            "hasSettings": true,
+            "img": "/devwidgets/activitystream24/images/activitystream_icon.png",
+            "id": "activitystream24",
+            "i18n": {
+                "default": "/devwidgets/activitystream24/bundles/default.json",
+                "en_US": "/devwidgets/activitystream24/bundles/en_US.json"
+            },
+            "name": "Activity Stream - 24",
+            "personalportal": true,
+            "url": "/devwidgets/activitystream24/activitystream24.html"
+        },
+        "activitystream25": {
+            "description": "Activity Stream Widget - 25",
+            "hasSettings": true,
+            "img": "/devwidgets/activitystream25/images/activitystream_icon.png",
+            "id": "activitystream25",
+            "i18n": {
+                "default": "/devwidgets/activitystream25/bundles/default.json",
+                "en_US": "/devwidgets/activitystream25/bundles/en_US.json"
+            },
+            "name": "Activity Stream - 25",
+            "personalportal": true,
+            "url": "/devwidgets/activitystream25/activitystream25.html"
+        },
+        "activitystream26": {
+            "description": "Activity Stream Widget - 26",
+            "hasSettings": true,
+            "img": "/devwidgets/activitystream26/images/activitystream_icon.png",
+            "id": "activitystream26",
+            "i18n": {
+                "default": "/devwidgets/activitystream26/bundles/default.json",
+                "en_US": "/devwidgets/activitystream26/bundles/en_US.json"
+            },
+            "name": "Activity Stream - 26",
+            "personalportal": true,
+            "url": "/devwidgets/activitystream26/activitystream26.html"
+        },
+        "activitystream27": {
+            "description": "Activity Stream Widget - 27",
+            "hasSettings": true,
+            "img": "/devwidgets/activitystream27/images/activitystream_icon.png",
+            "id": "activitystream27",
+            "i18n": {
+                "default": "/devwidgets/activitystream27/bundles/default.json",
+                "en_US": "/devwidgets/activitystream27/bundles/en_US.json"
+            },
+            "name": "Activity Stream - 27",
+            "personalportal": true,
+            "url": "/devwidgets/activitystream27/activitystream27.html"
+        },
+        "activitystream28": {
+            "description": "Activity Stream Widget - 28",
+            "hasSettings": true,
+            "img": "/devwidgets/activitystream28/images/activitystream_icon.png",
+            "id": "activitystream28",
+            "i18n": {
+                "default": "/devwidgets/activitystream28/bundles/default.json",
+                "en_US": "/devwidgets/activitystream28/bundles/en_US.json"
+            },
+            "name": "Activity Stream - 28",
+            "personalportal": true,
+            "url": "/devwidgets/activitystream28/activitystream28.html"
+        },
+        "activitystream29": {
+            "description": "Activity Stream Widget - 29",
+            "hasSettings": true,
+            "img": "/devwidgets/activitystream29/images/activitystream_icon.png",
+            "id": "activitystream29",
+            "i18n": {
+                "default": "/devwidgets/activitystream29/bundles/default.json",
+                "en_US": "/devwidgets/activitystream29/bundles/en_US.json"
+            },
+            "name": "Activity Stream - 29",
+            "personalportal": true,
+            "url": "/devwidgets/activitystream29/activitystream29.html"
+        },
+        "activitystream30": {
+            "description": "Activity Stream Widget - 30",
+            "hasSettings": true,
+            "img": "/devwidgets/activitystream30/images/activitystream_icon.png",
+            "id": "activitystream30",
+            "i18n": {
+                "default": "/devwidgets/activitystream30/bundles/default.json",
+                "en_US": "/devwidgets/activitystream30/bundles/en_US.json"
+            },
+            "name": "Activity Stream - 30",
+            "personalportal": true,
+            "url": "/devwidgets/activitystream30/activitystream30.html"
+        },
+        "activitystream31": {
+            "description": "Activity Stream Widget - 31",
+            "hasSettings": true,
+            "img": "/devwidgets/activitystream31/images/activitystream_icon.png",
+            "id": "activitystream31",
+            "i18n": {
+                "default": "/devwidgets/activitystream31/bundles/default.json",
+                "en_US": "/devwidgets/activitystream31/bundles/en_US.json"
+            },
+            "name": "Activity Stream - 31",
+            "personalportal": true,
+            "url": "/devwidgets/activitystream31/activitystream31.html"
+        },
+        "activitystream32": {
+            "description": "Activity Stream Widget - 32",
+            "hasSettings": true,
+            "img": "/devwidgets/activitystream32/images/activitystream_icon.png",
+            "id": "activitystream32",
+            "i18n": {
+                "default": "/devwidgets/activitystream32/bundles/default.json",
+                "en_US": "/devwidgets/activitystream32/bundles/en_US.json"
+            },
+            "name": "Activity Stream - 32",
+            "personalportal": true,
+            "url": "/devwidgets/activitystream32/activitystream32.html"
+        },
+        "activitystream33": {
+            "description": "Activity Stream Widget - 33",
+            "hasSettings": true,
+            "img": "/devwidgets/activitystream33/images/activitystream_icon.png",
+            "id": "activitystream33",
+            "i18n": {
+                "default": "/devwidgets/activitystream33/bundles/default.json",
+                "en_US": "/devwidgets/activitystream33/bundles/en_US.json"
+            },
+            "name": "Activity Stream - 33",
+            "personalportal": true,
+            "url": "/devwidgets/activitystream33/activitystream33.html"
+        },
+        "activitystream34": {
+            "description": "Activity Stream Widget - 34",
+            "hasSettings": true,
+            "img": "/devwidgets/activitystream34/images/activitystream_icon.png",
+            "id": "activitystream34",
+            "i18n": {
+                "default": "/devwidgets/activitystream34/bundles/default.json",
+                "en_US": "/devwidgets/activitystream34/bundles/en_US.json"
+            },
+            "name": "Activity Stream - 34",
+            "personalportal": true,
+            "url": "/devwidgets/activitystream34/activitystream34.html"
+        },
+        "activitystream35": {
+            "description": "Activity Stream Widget - 35",
+            "hasSettings": true,
+            "img": "/devwidgets/activitystream35/images/activitystream_icon.png",
+            "id": "activitystream35",
+            "i18n": {
+                "default": "/devwidgets/activitystream35/bundles/default.json",
+                "en_US": "/devwidgets/activitystream35/bundles/en_US.json"
+            },
+            "name": "Activity Stream - 35",
+            "personalportal": true,
+            "url": "/devwidgets/activitystream35/activitystream35.html"
+        },
+        "activitystream36": {
+            "description": "Activity Stream Widget - 36",
+            "hasSettings": true,
+            "img": "/devwidgets/activitystream36/images/activitystream_icon.png",
+            "id": "activitystream36",
+            "i18n": {
+                "default": "/devwidgets/activitystream36/bundles/default.json",
+                "en_US": "/devwidgets/activitystream36/bundles/en_US.json"
+            },
+            "name": "Activity Stream - 36",
+            "personalportal": true,
+            "url": "/devwidgets/activitystream36/activitystream36.html"
+        },
+        "activitystream37": {
+            "description": "Activity Stream Widget - 37",
+            "hasSettings": true,
+            "img": "/devwidgets/activitystream37/images/activitystream_icon.png",
+            "id": "activitystream37",
+            "i18n": {
+                "default": "/devwidgets/activitystream37/bundles/default.json",
+                "en_US": "/devwidgets/activitystream37/bundles/en_US.json"
+            },
+            "name": "Activity Stream - 37",
+            "personalportal": true,
+            "url": "/devwidgets/activitystream37/activitystream37.html"
+        },
+        "activitystream38": {
+            "description": "Activity Stream Widget - 38",
+            "hasSettings": true,
+            "img": "/devwidgets/activitystream38/images/activitystream_icon.png",
+            "id": "activitystream38",
+            "i18n": {
+                "default": "/devwidgets/activitystream38/bundles/default.json",
+                "en_US": "/devwidgets/activitystream38/bundles/en_US.json"
+            },
+            "name": "Activity Stream - 38",
+            "personalportal": true,
+            "url": "/devwidgets/activitystream38/activitystream38.html"
+        },
+        "activitystream39": {
+            "description": "Activity Stream Widget - 39",
+            "hasSettings": true,
+            "img": "/devwidgets/activitystream39/images/activitystream_icon.png",
+            "id": "activitystream39",
+            "i18n": {
+                "default": "/devwidgets/activitystream39/bundles/default.json",
+                "en_US": "/devwidgets/activitystream39/bundles/en_US.json"
+            },
+            "name": "Activity Stream - 39",
+            "personalportal": true,
+            "url": "/devwidgets/activitystream39/activitystream39.html"
+        },
+        "activitystream40": {
+            "description": "Activity Stream Widget - 40",
+            "hasSettings": true,
+            "img": "/devwidgets/activitystream40/images/activitystream_icon.png",
+            "id": "activitystream40",
+            "i18n": {
+                "default": "/devwidgets/activitystream40/bundles/default.json",
+                "en_US": "/devwidgets/activitystream40/bundles/en_US.json"
+            },
+            "name": "Activity Stream - 40",
+            "personalportal": true,
+            "url": "/devwidgets/activitystream40/activitystream40.html"
+        },
+        "activitystream41": {
+            "description": "Activity Stream Widget - 41",
+            "hasSettings": true,
+            "img": "/devwidgets/activitystream41/images/activitystream_icon.png",
+            "id": "activitystream41",
+            "i18n": {
+                "default": "/devwidgets/activitystream41/bundles/default.json",
+                "en_US": "/devwidgets/activitystream41/bundles/en_US.json"
+            },
+            "name": "Activity Stream - 41",
+            "personalportal": true,
+            "url": "/devwidgets/activitystream41/activitystream41.html"
+        },
+        "activitystream42": {
+            "description": "Activity Stream Widget - 42",
+            "hasSettings": true,
+            "img": "/devwidgets/activitystream42/images/activitystream_icon.png",
+            "id": "activitystream42",
+            "i18n": {
+                "default": "/devwidgets/activitystream42/bundles/default.json",
+                "en_US": "/devwidgets/activitystream42/bundles/en_US.json"
+            },
+            "name": "Activity Stream - 42",
+            "personalportal": true,
+            "url": "/devwidgets/activitystream42/activitystream42.html"
+        },
+        "activitystream43": {
+            "description": "Activity Stream Widget - 43",
+            "hasSettings": true,
+            "img": "/devwidgets/activitystream43/images/activitystream_icon.png",
+            "id": "activitystream43",
+            "i18n": {
+                "default": "/devwidgets/activitystream43/bundles/default.json",
+                "en_US": "/devwidgets/activitystream43/bundles/en_US.json"
+            },
+            "name": "Activity Stream - 43",
+            "personalportal": true,
+            "url": "/devwidgets/activitystream43/activitystream43.html"
+        },
+        "activitystream44": {
+            "description": "Activity Stream Widget - 44",
+            "hasSettings": true,
+            "img": "/devwidgets/activitystream44/images/activitystream_icon.png",
+            "id": "activitystream44",
+            "i18n": {
+                "default": "/devwidgets/activitystream44/bundles/default.json",
+                "en_US": "/devwidgets/activitystream44/bundles/en_US.json"
+            },
+            "name": "Activity Stream - 44",
+            "personalportal": true,
+            "url": "/devwidgets/activitystream44/activitystream44.html"
+        },
+        "activitystream45": {
+            "description": "Activity Stream Widget - 45",
+            "hasSettings": true,
+            "img": "/devwidgets/activitystream45/images/activitystream_icon.png",
+            "id": "activitystream45",
+            "i18n": {
+                "default": "/devwidgets/activitystream45/bundles/default.json",
+                "en_US": "/devwidgets/activitystream45/bundles/en_US.json"
+            },
+            "name": "Activity Stream - 45",
+            "personalportal": true,
+            "url": "/devwidgets/activitystream45/activitystream45.html"
+        },
+        "activitystream46": {
+            "description": "Activity Stream Widget - 46",
+            "hasSettings": true,
+            "img": "/devwidgets/activitystream46/images/activitystream_icon.png",
+            "id": "activitystream46",
+            "i18n": {
+                "default": "/devwidgets/activitystream46/bundles/default.json",
+                "en_US": "/devwidgets/activitystream46/bundles/en_US.json"
+            },
+            "name": "Activity Stream - 46",
+            "personalportal": true,
+            "url": "/devwidgets/activitystream46/activitystream46.html"
+        },
+        "activitystream47": {
+            "description": "Activity Stream Widget - 47",
+            "hasSettings": true,
+            "img": "/devwidgets/activitystream47/images/activitystream_icon.png",
+            "id": "activitystream47",
+            "i18n": {
+                "default": "/devwidgets/activitystream47/bundles/default.json",
+                "en_US": "/devwidgets/activitystream47/bundles/en_US.json"
+            },
+            "name": "Activity Stream - 47",
+            "personalportal": true,
+            "url": "/devwidgets/activitystream47/activitystream47.html"
+        },
+        "activitystream48": {
+            "description": "Activity Stream Widget - 48",
+            "hasSettings": true,
+            "img": "/devwidgets/activitystream48/images/activitystream_icon.png",
+            "id": "activitystream48",
+            "i18n": {
+                "default": "/devwidgets/activitystream48/bundles/default.json",
+                "en_US": "/devwidgets/activitystream48/bundles/en_US.json"
+            },
+            "name": "Activity Stream - 48",
+            "personalportal": true,
+            "url": "/devwidgets/activitystream48/activitystream48.html"
+        },
+        "activitystream49": {
+            "description": "Activity Stream Widget - 49",
+            "hasSettings": true,
+            "img": "/devwidgets/activitystream49/images/activitystream_icon.png",
+            "id": "activitystream49",
+            "i18n": {
+                "default": "/devwidgets/activitystream49/bundles/default.json",
+                "en_US": "/devwidgets/activitystream49/bundles/en_US.json"
+            },
+            "name": "Activity Stream - 49",
+            "personalportal": true,
+            "url": "/devwidgets/activitystream49/activitystream49.html"
+        },
+        "activitystream50": {
+            "description": "Activity Stream Widget - 50",
+            "hasSettings": true,
+            "img": "/devwidgets/activitystream50/images/activitystream_icon.png",
+            "id": "activitystream50",
+            "i18n": {
+                "default": "/devwidgets/activitystream50/bundles/default.json",
+                "en_US": "/devwidgets/activitystream50/bundles/en_US.json"
+            },
+            "name": "Activity Stream - 50",
+            "personalportal": true,
+            "url": "/devwidgets/activitystream50/activitystream50.html"
+        },
+
         "addtocontacts": {
             "description":"Add a contact",
             "name":"Add a contact",
