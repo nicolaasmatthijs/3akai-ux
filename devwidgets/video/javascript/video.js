@@ -27,7 +27,7 @@
 /*global $, Config, Querystring, SWFID, swfobject */
 
 
-require(["jquery", "sakai/sakai.api.core", "/devwidgets/video/jwplayer/swfobject.js"], function($, sakai) {
+require(["jquery", "sakai/sakai.api.core", "/devwidgets/video/jwplayer/swfobject.js", "/devwidgets/video/jwplayer/jwplayer.js"], function($, sakai) {
 
     /**
      * @name sakai_global.video
@@ -150,7 +150,7 @@ require(["jquery", "sakai/sakai.api.core", "/devwidgets/video/jwplayer/swfobject
                   $(container, rootel).html(sakai.api.Util.TemplateRenderer(videoTemplate, video));
 
                   var videoWidth = rootel.width() - 6 + "px";
-                  var so = new SWFObject('/devwidgets/video/jwplayer/player-licensed.swf','ply', videoWidth, '100%','9','#ffffff');
+                  var so = new SWFObject('/devwidgets/video/jwplayer/player.swf','ply', videoWidth, '100%','9','#000000');
                   so.addParam('allowfullscreen','true');
                   so.addParam('allowscriptaccess','always');
                   so.addParam('wmode','opaque');
