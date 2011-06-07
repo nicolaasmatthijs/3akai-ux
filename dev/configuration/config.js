@@ -1640,7 +1640,8 @@ define(function(){
                     "_title": "My Profile",
                     "_altTitle": "${user}'s Profile",
                     "_order": 0,
-                    "_nonEditable": true
+                    "_nonEditable": true,
+                    "_view": ["everyone", "anonymous", "contacts"]
                 },
                 "library": {
                     "_ref": "id9834611274",
@@ -1648,6 +1649,7 @@ define(function(){
                     "_title": "My Library",
                     "_altTitle": "${user}'s Library",
                     "_nonEditable": true,
+                    "_view": ["everyone", "anonymous", "contacts"],
                     "main": {
                         "_ref": "id9834611274",
                         "_order": 0,
@@ -1660,6 +1662,7 @@ define(function(){
                     "_ref": "id213623673",
                     "_altTitle": "${user}'s Memberships",
                     "_nonEditable": true,
+                    "_view": ["everyone", "anonymous", "contacts"],
                     "main": {
                         "_ref": "id213623673",
                         "_order": 0,
@@ -1672,6 +1675,7 @@ define(function(){
                     "_ref": "id1193715035",
                     "_altTitle": "${user}'s Contacts",
                     "_nonEditable": true,
+                    "_view": ["everyone", "anonymous", "contacts"],
                     "main": {
                         "_ref": "id1193715035",
                         "_order": 0,
