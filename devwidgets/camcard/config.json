@@ -1,0 +1,18 @@
+{
+    "id":                 "camcard",
+    "type":               "contrib",
+    "enabled":            true,
+    "hasSettings":        false,
+    "url":                "/devwidgets/camcard/camcard.html",
+    "img":                "/devwidgets/embedcontent/images/content.png",
+    "i18n": {
+        "default": {
+            "bundle":     "/devwidgets/camcard/bundles/default.properties",
+            "name":       "Camcard",
+            "description":"Camcard"
+        }
+    },
+    "personalportal":     false,
+    "sakaidocs":          true,
+    "showinsakaigoodies": true
+}

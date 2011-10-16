@@ -1,0 +1,4 @@
+.camcard_widget {background: url(/devwidgets/camcard/images/camcard.png); width: 339px; height: 211px;}
+.camcard_displayname {position: relative; left: 20px; top: 10px; font-size: 15px; color: #fff;}
+.camcard_picture {position: relative; left: 196px; top: 14px; width: 128px; height: 151px; border: 1px solid #CCCCCC;}
+.camcard_college {position: relative; left: 20px; top: -10px; font-size: 13px; font-weight: bold; color: #fff;
