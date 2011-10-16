@@ -1586,6 +1586,14 @@ define(function(){
                         "_title": "__MSG__TRASH__",
                         "_nonEditable": true
                     }
+                },
+                "profile": {
+                    "_title": "__MSG__MY_PROFILE__",
+                    "_altTitle": "__MSG__MY_PROFILE_OTHER__",
+                    "_order": 2,
+                    "_view": "anonymous",
+                    "_reorderOnly": true,
+                    "_nonEditable": true
                 }
             },
             "${refid}0": {
@@ -1662,13 +1670,24 @@ define(function(){
          */
         defaultpubstructure: {
             "structure0": {
-                "profile": {
-                    "_title": "__MSG__MY_PROFILE__",
-                    "_altTitle": "__MSG__MY_PROFILE_OTHER__",
+                "website": {
+                    "_ref": "${refid}3",
                     "_order": 0,
-                    "_view": "anonymous",
+                    "_title": "My website",
+                    "_altTitle": "${user}'s website",
                     "_reorderOnly": true,
-                    "_nonEditable": true
+                    "_nonEditable": false,
+                    "_view": "anonymous",
+                    "home": {
+                        "_ref": "${refid}3",
+                        "_order": 0,
+                        "_title": "Home"
+                    },
+                    "research": {
+                        "_ref": "${refid}4",
+                        "_order": 1,
+                        "_title": "Research"
+                    }
                 },
                 "library": {
                     "_ref": "${refid}0",
@@ -1723,6 +1742,12 @@ define(function(){
             },
             "${refid}2": {
                 "page": "<div id='widget_contacts' class='widget_inline'></div>"
+            },
+            "${refid}3": {
+                "page": "About about about"
+            },
+            "${refid}4": {
+                "page": "Research research research"
             }
         },
 
