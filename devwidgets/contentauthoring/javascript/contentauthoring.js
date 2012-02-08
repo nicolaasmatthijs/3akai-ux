@@ -46,6 +46,7 @@ require(["jquery", "sakai/sakai.api.core", "jquery-ui"], function($, sakai) {
         var filesUploaded = [];
         var uploadError = false;
 
+
         ///////////////////////
         // Utility functions //
         ///////////////////////
@@ -65,6 +66,7 @@ require(["jquery", "sakai/sakai.api.core", "jquery-ui"], function($, sakai) {
             }
             return widgetIDs;
         };
+
 
         //////////////////////
         // Toggle edit mode //
@@ -164,6 +166,7 @@ require(["jquery", "sakai/sakai.api.core", "jquery-ui"], function($, sakai) {
             });
             setRowReorderHover();
         }
+
 
         //////////////////////
         // Reorder portlets //
@@ -608,6 +611,11 @@ require(["jquery", "sakai/sakai.api.core", "jquery-ui"], function($, sakai) {
             if (currentRow === rowToChange){
                 hideEditRowMenu();
             } else {
+                if($(".contentauthoring_row").length > 1){
+                    $("#contentauthoring_row_menu_remove", $rootel).parent("li").show();
+                } else {
+                    $("#contentauthoring_row_menu_remove", $rootel).parent("li").hide();
+                }
                 $($(this).parents(".contentauthoring_row_handle_container")).addClass("selected");
                 $("#contentauthoring_row_menu").css("left", ($(this).position().left - ($("#contentauthoring_row_menu").width() / 2)) + "px");
                 $("#contentauthoring_row_menu").css("top", ($(this).position().top + 27) + "px");
