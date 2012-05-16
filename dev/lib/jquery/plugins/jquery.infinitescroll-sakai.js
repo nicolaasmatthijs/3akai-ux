@@ -24,6 +24,8 @@
      */
     $.fn.infinitescroll = function(source, parameters, render, emptyListProcessor, loadingImage, postProcessor, postRenderer, initialContent, initialCallback, $scrollContainer) {
 
+        var START_TIME = new Date().getTime();
+
         parameters = parameters || {};
         // Page number to start listing results from. As this is an infinite scroll,
         // this will always be 0
@@ -66,6 +68,7 @@
          * of the end of the page. If it is, we load the next set of results
          */
         var loadNextList = function() {
+            var START_TIME = new Date().getTime();
             var threshold = 500;
             var scrollTop = $.browser.msie ? $('html').scrollTop() : $(window).scrollTop();
             var pixelsRemainingUntilBottom = $(document).height() - $(window).height() - scrollTop;
@@ -230,6 +233,7 @@
                         if (initial && $.isFunction(initialCallback)) {
                             initialCallback(data);
                         }
+                        report('Finished infinite loading for: ' + source, START_TIME);
                     },
                     'error': function() {
                         showHideLoadingContainer(false);

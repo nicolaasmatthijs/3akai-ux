@@ -36,6 +36,7 @@ require(['jquery', 'sakai/sakai.api.core'], function($, sakai) {
         // Configuration variables //
         /////////////////////////////
 
+        var START_TIME = new Date().getTime();
         var mylibrary = {  // global data for mylibrary widget
             sortBy: '_lastModified',
             sortOrder: 'desc',
