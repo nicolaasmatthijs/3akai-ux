@@ -31,6 +31,9 @@ sakai_global = {};
  * benalman.com/projects/javascript-debug-console-log/
  * https://gist.github.com/466188
  */
+
+var START_TIME_4 = new Date().getTime();
+
 window.debug = (function() {
     var that = {},
         methods = [ 'error', 'warn', 'info', 'debug', 'log', 'trace'],
@@ -139,6 +142,7 @@ require(
         "jquery-plugins/jquery.infinitescroll-sakai"
     ],
     function($, sakai) {
+        report('Finished sakai.dependencies', START_TIME_4);
         require(['misc/domReady!'], function(doc) {
             sakai.api.User.loadMeData(function(success, data) {
                 sakai.api.Util.startup(data);

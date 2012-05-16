@@ -39,7 +39,7 @@ define(
         "jquery-ui"
     ],
     function($, sakai_serv, sakai_l10n, sakai_i18n, sakai_conf, _) {
-
+    var START_TIME = new Date().getTime();
     var sakai_util = {
 
         startup : function(meData) {
@@ -2697,6 +2697,6 @@ define(
             return ret;
         }
     };
-
+    report('Loaded sakai.api.util', START_TIME);
     return sakai_util;
 });
