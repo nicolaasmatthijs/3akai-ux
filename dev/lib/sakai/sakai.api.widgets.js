@@ -227,6 +227,7 @@ define(
              * @param {String} context The context of the widget (e.g. siteid)
              */
             loadWidgets : function(id, showSettings, context, widgetData, widgetDataPassthrough){
+                var START_TIME = new Date().getTime();
                 // Configuration variables
                 var widgetNameSpace = "sakai_global";
                 var widgetSelector = ".widget_inline";
@@ -271,6 +272,7 @@ define(
                         // Remove the widget from the widgets object (clean up)
                         if (doDelete){
                             delete widgetsInternal[widgetname];
+                            report('Widget inform on load: ' + widgetname, START_TIME);
                         }
                     }
                 };
@@ -516,6 +518,7 @@ define(
                                     }
                                 }
                             }
+                            report('Loaded widget html and bundles', START_TIME);
                         }, false);
                     }
                 };
@@ -528,7 +531,7 @@ define(
                  * @param {String} context The context of the widget (e.g. siteid)
                  */
                 var locateWidgets = function(containerId, showSettings, widgetData, context){
-
+                    var START_TIME = new Date().getTime();
                     // Use document.getElementById() to avoid jQuery selector escaping issues with '/'
                     var el = containerId ? document.getElementById(containerId) : $(document.body);
 
@@ -632,6 +635,7 @@ define(
                         }
                     }
 
+                    report('Finished locating the widgets', START_TIME);
                     // Load the HTML files for the widgets
                     loadWidgetFiles(widgetsInternal, batchWidgets);
 
