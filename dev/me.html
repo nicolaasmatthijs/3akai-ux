@@ -4,14 +4,14 @@
     <head>
 
         <script type="text/javascript" language="JavaScript">
-            var START_TIME = new Date().getTime();
+            var START_TIME_GLOBAL = new Date().getTime();
 
             var report = function(message, start){
                 start = start || START_TIME;
                 var END_TIME = new Date().getTime();
                 console.log("=> " + message);
                 console.log("Time taken: " + (END_TIME - start));
-                console.log("Total load time so far: " + (END_TIME - START_TIME));
+                console.log("Total load time so far: " + (END_TIME - START_TIME_GLOBAL));
                 console.log("**************");
             }
         </script>

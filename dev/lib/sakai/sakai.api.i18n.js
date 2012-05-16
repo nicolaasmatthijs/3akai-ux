@@ -80,6 +80,7 @@ define(
          * @param {Object} meData the data from sakai.api.User.data.me
          */
         init : function(meData){
+            var START_TIME = new Date().getTime();
             ////////////////////
             // HELP VARIABLES //
             ////////////////////
@@ -146,6 +147,7 @@ define(
                 require("sakai/sakai.api.widgets").initialLoad();
                 sakaii18nAPI.done = true;
                 $(window).trigger("done.i18n.sakai");
+                report('Finished initial i18n', START_TIME);
                 return true;
             };
 
@@ -250,8 +252,10 @@ define(
                 if (Globalize.cultures && Globalize.cultures[i10nCode]) {
                     Globalize.culture(i10nCode);
                 } else {
+                    var START_TIME = new Date().getTime();
                     $.getScript(sakai_config.URL.I10N_BUNDLE_URL.replace("__CODE__", i10nCode), function(success, textStatus) {
                         Globalize.culture(i10nCode);
+                        report('Finished loading the culture', START_TIME);
                     });
                 }
 
