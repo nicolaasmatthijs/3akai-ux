@@ -1,5 +1,7 @@
 (function($) {
 
+    var START_TIME = new Date().getTime();
+
     var containerCache = [];
 
     /**
@@ -310,5 +312,7 @@
         };
 
     };
+
+    report('Loaded jquery.infinitescroll-sakai.js', START_TIME);
 
 })(jQuery);

@@ -38,6 +38,8 @@ define(
     ],
     function($, sakai_config, sakai_serv, _) {
 
+    var START_TIME = new Date().getTime();
+
     var sakaii18nAPI = {
         data : {
             localBundle : false,
@@ -482,6 +484,8 @@ define(
         }
 
     };
+
+    report('Loaded sakai.api.i18n.js', START_TIME);
 
     return sakaii18nAPI;
 });

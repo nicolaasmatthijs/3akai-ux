@@ -7,6 +7,19 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
         <title></title>
 
+        <script type="text/javascript" language="JavaScript">
+            var START_TIME = new Date().getTime();
+
+            var report = function(message, start){
+                start = start || START_TIME;
+                var END_TIME = new Date().getTime();
+                console.log("=> " + message);
+                console.log("Time taken: " + (END_TIME - start));
+                console.log("Total load time so far: " + (END_TIME - START_TIME));
+                console.log("**************");
+            }
+        </script>
+
         <!-- Sakai Core CSS -->
         <link rel="stylesheet" type="text/css" href="/dev/css/sakai/main.css" />
 
@@ -14,7 +27,7 @@
         <link rel="stylesheet" type="text/css" href="/dev/css/sakai/sakai.corev1.css" />
 
     </head>
-    <body class="fl-centered me i18nable">
+    <body class="fl-centered me i18nable" onload="report('Browser load event')">
         <!-- HEADER -->
         <div id="widget_branding" class="widget_inline"></div>
         <div class="fl-container-flex header s3d-header">

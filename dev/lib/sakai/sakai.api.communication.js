@@ -41,6 +41,8 @@ define(
     ],
     function($, sakai_user, sakai_l10n, sakai_i18n, sakai_util, sakai_server, sakai_conf, _) {
 
+    var START_TIME = new Date().getTime();
+
     var sakaiCommunicationsAPI =  {
         /**
          * Sends a Sakai message to one or more users. If a group id is received, the
@@ -619,5 +621,8 @@ define(
 
         }
     };
+    
+    report('Loaded sakai.api.communication.js', START_TIME);
+    
     return sakaiCommunicationsAPI;
 });

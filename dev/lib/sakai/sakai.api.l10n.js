@@ -35,7 +35,7 @@ define(
     ],
     function(sakai_conf) {
     return {
-
+        var START_TIME = new Date().getTime();
         /**
          * Get the current logged in user's locale
          *
@@ -250,5 +250,8 @@ define(
             }
             return split.join("/").toUpperCase();
         }
+        
+        report('Loaded sakai.api.l10n.js', START_TIME);
+        
     };
 });
