@@ -37,6 +37,8 @@ define(
     ],
     function($, sakai_serv, sakai_util, sakai_i18n, sakai_user, sakai_config, sakai_widgets_config) {
 
+    var START_TIME = new Date().getTime();
+
     $.extend(true, sakai_widgets_config, sakai_config.WidgetSettings);
 
     var sakai = {
@@ -952,6 +954,6 @@ define(
                 $rootel.parents('#' + poolID + '-' + ref + ', #' + ref).length !== 0;
         }
     };
-
+    report('Loaded sakai.api.widgets', START_TIME);
     return sakaiWidgetsAPI;
 });
