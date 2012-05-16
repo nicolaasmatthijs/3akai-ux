@@ -4,14 +4,23 @@
 
         <script type="text/javascript" language="JavaScript">
             var START_TIME_GLOBAL = new Date().getTime();
+            var resultsObj = {
+                'name': [],
+                'timetaken': [],
+                'totaltime': []
+            };
 
             var report = function(message, start){
                 start = start || START_TIME;
                 var END_TIME = new Date().getTime();
                 console.log("=> " + message);
                 console.log("Time taken: " + (END_TIME - start));
-                console.log("Total load time so far: " + (END_TIME - START_TIME));
+                console.log("Total load time so far: " + (END_TIME - START_TIME_GLOBAL));
                 console.log("**************");
+                resultsObj.name.push(message);
+                resultsObj.timetaken.push(END_TIME - start);
+                resultsObj.totaltime.push(END_TIME - START_TIME_GLOBAL);
+                console.log(JSON.stringify(resultsObj));
             }
         </script>
 
@@ -22,7 +31,7 @@
         <link rel="stylesheet" type="text/css" href="/dev/css/sakai/sakai.corev1.css" />
         <link rel="stylesheet" type="text/css" href="/dev/css/sakai/sakai.explore.css" />
     </head>
-    <body class="fl-centered explore i18nable">
+    <body class="fl-centered explore i18nable" onload="report('Browser load event')">
 
         <div style="display:none">__MSG__IE_PLACEHOLDER__</div>
 
