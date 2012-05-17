@@ -13,7 +13,7 @@
             };
 
             var report = function(message, start){
-                start = start || START_TIME;
+                start = start || START_TIME_GLOBAL;
                 var END_TIME = new Date().getTime();
                 console.log("=> " + message + " | Time taken: " + (END_TIME - start) + " | Total load time so far: " + (END_TIME - START_TIME_GLOBAL));
                 resultsObj.name.push(message);

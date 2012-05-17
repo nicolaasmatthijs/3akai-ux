@@ -519,7 +519,7 @@ define(
                                 }
                             }
                             report('Loaded widget html and bundles', START_TIME);
-                        }, false);
+                        });
                     }
                 };
 
