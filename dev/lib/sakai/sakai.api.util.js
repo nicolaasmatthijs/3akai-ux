@@ -88,25 +88,25 @@ define(
         getTemplates: function() {
             var START_TIME = new Date().getTime();
             var templates = [];
-            $.ajax({
-                url: sakai_conf.URL.WORLD_INFO_URL,
+            //$.ajax({
+            //    url: sakai_conf.URL.WORLD_INFO_URL,
                 //async:false,
-                success: function(data) {
-                    templates = _.toArray(sakai_serv.removeServerCreatedObjects(data, ["jcr:"]));
+            //    success: function(data) {
+            //        templates = _.toArray(sakai_serv.removeServerCreatedObjects(data, ["jcr:"]));
                     report('Finish world templates', START_TIME);
-                }
-            });
-            $.each(templates, function(i,temp) {
-                $.each(temp, function(k,templ) {
-                    if ($.isPlainObject(temp[k])) {
-                        temp.templates = temp.templates || [];
-                        temp.templates.push(temp[k]);
-                    }
-                });
-            });
-            templates = _.sortBy(templates, function(templ) {
-                return templ.order;
-            });
+            //    }
+            //});
+            //$.each(templates, function(i,temp) {
+            //    $.each(temp, function(k,templ) {
+            //        if ($.isPlainObject(temp[k])) {
+            //            temp.templates = temp.templates || [];
+            //            temp.templates.push(temp[k]);
+            //        }
+            //    });
+            //});
+            //templates = _.sortBy(templates, function(templ) {
+            //    return templ.order;
+            //});
             return templates;
         },
 

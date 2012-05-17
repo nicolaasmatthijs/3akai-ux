@@ -253,6 +253,9 @@ define(
                     Globalize.culture(i10nCode);
                 } else {
                     var START_TIME = new Date().getTime();
+                    $.ajaxSetup({
+                      cache: true
+                    });
                     $.getScript(sakai_config.URL.I10N_BUNDLE_URL.replace("__CODE__", i10nCode), function(success, textStatus) {
                         Globalize.culture(i10nCode);
                         report('Finished loading the culture', START_TIME);

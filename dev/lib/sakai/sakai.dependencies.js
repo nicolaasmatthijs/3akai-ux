@@ -131,7 +131,7 @@ require(
     function($, sakai) {
         report('Finished sakai.dependencies', START_TIME_4);
         var START_TIME = new Date().getTime();
-        require(['misc/domReady!'], function(doc) {
+        //require(['misc/domReady!'], function(doc) {
             report('Finished misc/domReady', START_TIME);
             var START_TIME = new Date().getTime();
             sakai.api.User.loadMeData(function(success, data) {
@@ -140,7 +140,7 @@ require(
                 // Start i18n
                 sakai.api.i18n.init(data);
             });
-        });
+        //});
         return sakai;
     }
 );
