@@ -44,6 +44,7 @@ define(
 
         startup : function(meData) {
             var START_TIME = new Date().getTime();
+            /*
             // I know this is hideous
             (function () {
                 var script = document.createElement("script");
@@ -77,7 +78,7 @@ define(
                         }
                     });
                 }, 60000);
-            }
+            }*/
             report('Finished doing util startup', START_TIME);
         },
 
@@ -89,7 +90,7 @@ define(
             var templates = [];
             $.ajax({
                 url: sakai_conf.URL.WORLD_INFO_URL,
-                async:false,
+                //async:false,
                 success: function(data) {
                     templates = _.toArray(sakai_serv.removeServerCreatedObjects(data, ["jcr:"]));
                     report('Finish world templates', START_TIME);
