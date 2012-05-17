@@ -1830,10 +1830,11 @@ define(
                 }
                 document.title = pageTitle;
                 // Show the actual page content
+                setTimeout(function(){
                 $('body').show();
                 if ($.isFunction(callback)) {
                     callback();
-                }
+                }}, 500);
             }
         },
 
