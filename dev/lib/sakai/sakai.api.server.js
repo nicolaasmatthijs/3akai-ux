@@ -342,7 +342,7 @@ define(
                     addIndexedFields(val.split('/'), i_data);
                 });
             }
-            sakaiServerAPI.removeServerCreatedObjects(i_data, ['_']);
+            //sakaiServerAPI.removeServerCreatedObjects(i_data, ['_']);
             postData[':content'] = $.toJSON(i_data);
             // Send request
             $.ajax({
@@ -420,7 +420,7 @@ define(
             var id = pagestructure['_path'];
             var toFilter = ['_', 'jcr:', 'sakai:', 'sling:'];
             var toExclude = ['_ref', '_title', '_altTitle', '_order', '_pid', '_count', '_view', '_edit', '_canView', '_canEdit', '_canSubedit', '_nonEditable', '_reorderOnly', '_lastModified', '_lastModifiedBy'];
-            pagestructure = sakaiServerAPI.removeServerCreatedObjects(pagestructure, toFilter, toExclude);
+            //pagestructure = sakaiServerAPI.removeServerCreatedObjects(pagestructure, toFilter, toExclude);
             if (pagestructure['structure0'] && _.isString(pagestructure['structure0'])) {
                 pagestructure['structure0'] = $.parseJSON(pagestructure['structure0']);
             }
