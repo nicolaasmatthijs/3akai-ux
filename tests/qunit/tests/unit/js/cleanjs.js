@@ -12,7 +12,42 @@ require(
         module("Clean Javascript");
 
         var consoleregex = new RegExp(/console\.(?:log|warn|error|debug|trace)/g),
-            alertregex = new RegExp(/alert\([.\s\S]*\)/g);
+            alertregex = new RegExp(/alert\([.\s\S]*\)/g),
+            spaceregex = new RegExp(/\(\{/g),
+            ifregex = new RegExp(/if\(/g),
+            elseregex = new RegExp(/else\{/g),
+            forregex =  new RegExp(/for\(/g);
+
+        var checkForSpaces = function(file) {
+            var matchesSpace = spaceregex.exec(file);
+            var matchesIf = ifregex.exec(file);
+            var matchesElse = elseregex.exec(file);
+            var matchesFor = forregex.exec(file);
+            if (matchesSpace && matchesSpace.length) {
+                for (var s=0;s<matchesSpace.length;s++) {
+                    ok(false, "found space issues around ){");
+                }
+            }
+            if (matchesIf && matchesIf.length) {
+                for (var i=0; i<matchesIf.length; i++) {
+                    ok(false, "found space issue around if(");
+                }
+            }
+            if (matchesElse && matchesElse.length) {
+                for (var e=0;e<matchesElse.length;e++) {
+                    ok(false, "found space issue around else{");
+                }
+            }
+            if (matchesFor && matchesFor.length) {
+                for (var f=0;f<matchesFor.length;f++) {
+                    ok(false, "found space issue around for(");
+                }
+            }   
+            if (!((matchesSpace && matchesSpace.length) || (matchesIf && matchesIf.length) ||
+                 (matchesElse && matchesElse.length) || (matchesFor && matchesFor.length))) {
+                ok(true, "No space issues found");
+            }
+        };
 
         var checkForConsoleLog = function(file, filename) {
             var matches = consoleregex.exec(file);
@@ -64,6 +99,7 @@ require(
                     success: function(data) {
                         checkForConsoleLog(data, filename);
                         checkForAlert(data);
+                        checkForSpaces(data);
                         JSHintfile(data, function() {
                             start();
                         });
