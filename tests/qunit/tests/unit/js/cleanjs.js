@@ -16,7 +16,8 @@ require(
             spaceregex = new RegExp(/\(\{/g),
             ifregex = new RegExp(/if\(/g),
             elseregex = new RegExp(/else\{/g),
-            forregex =  new RegExp(/for\(/g);
+            forregex =  new RegExp(/for\(/g),
+            doublequoteregex = new RegExp(/^[^ ][^*]/g);
 
         var checkForSpaces = function(file) {
             var matchesSpace = spaceregex.exec(file);
@@ -24,17 +25,17 @@ require(
             var matchesElse = elseregex.exec(file);
             var matchesFor = forregex.exec(file);
             if (matchesSpace && matchesSpace.length) {
-                for (var s=0;s<matchesSpace.length;s++) {
+                for (var s = 0; s < matchesSpace.length; s++) {
                     ok(false, "found space issues around ){");
                 }
             }
             if (matchesIf && matchesIf.length) {
-                for (var i=0; i<matchesIf.length; i++) {
+                for (var i = 0; i < matchesIf.length; i++) {
                     ok(false, "found space issue around if(");
                 }
             }
             if (matchesElse && matchesElse.length) {
-                for (var e=0;e<matchesElse.length;e++) {
+                for (var e = 0; e < matchesElse.length; e++) {
                     ok(false, "found space issue around else{");
                 }
             }
@@ -47,6 +48,10 @@ require(
                  (matchesElse && matchesElse.length) || (matchesFor && matchesFor.length))) {
                 ok(true, "No space issues found");
             }
+        };
+
+        var checkForDoubleQuotes = function(file) {
+            
         };
 
         var checkForConsoleLog = function(file, filename) {
