@@ -29,8 +29,8 @@ require(['jquery'], function($) {
          * console.log(readableFileSize) => 524MB
          * ```
          * 
-         * @param  {Boolean}    includeEmpty    Whether or not to include fields that have an empty value
-         * @return {Object}                     JSON Object where the keys represent the names of all of the form fields and the values represent their value
+         * @param  {Number}    size    Size of the file in bytes
+         * @return {String}            File size in human readable format
          */
          $.fn.fileSize = function(size) {
             var suffix = ["bytes", "KB", "MB", "GB", "TB", "PB"];
