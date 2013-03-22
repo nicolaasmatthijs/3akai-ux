@@ -47,6 +47,7 @@ define([
          * Third-party dependencies.
          */
         'bootstrap',
+        'bootstrap.clickover',
         'globalize',
         'jquery.ba-bbq',
         'jquery.ba-hashchange',

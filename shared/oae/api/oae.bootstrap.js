@@ -24,6 +24,7 @@ requirejs.config({
 
         // Vendor paths
         'bootstrap': 'vendor/js/bootstrap',
+        'bootstrap.clickover': 'vendor/js/bootstrapx.clickover',
         'globalize': 'vendor/js/l10n/globalize',
         'jquery.autoSuggest': 'vendor/js/jquery-plugins/jquery.autoSuggest.sakai-edited',
         'jquery.ba-bbq': 'vendor/js/jquery-plugins/jquery.ba-bbq',
