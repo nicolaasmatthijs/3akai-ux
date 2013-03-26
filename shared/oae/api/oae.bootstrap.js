@@ -26,7 +26,7 @@ requirejs.config({
         'bootstrap': 'vendor/js/bootstrap',
         'bootstrap.clickover': 'vendor/js/bootstrapx.clickover',
         'globalize': 'vendor/js/l10n/globalize',
-        'jquery.autoSuggest': 'vendor/js/jquery-plugins/jquery.autoSuggest.sakai-edited',
+        'jquery.autosuggest': 'vendor/js/jquery-plugins/jquery.autosuggest',
         'jquery.ba-bbq': 'vendor/js/jquery-plugins/jquery.ba-bbq',
         'jquery.ba-hashchange': 'vendor/js/jquery-plugins/jquery.ba-hashchange',
         'jquery.contentchange': 'vendor/js/jquery-plugins/jquery.contentchange.sakai-edited',

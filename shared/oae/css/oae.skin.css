@@ -54,6 +54,7 @@ body {
 
 body, button, input, select, textarea,
 .btn > i, a.oae-plain-link,
+.popover-content, .popover-content button,
 h1 [class^="icon-"], h1 [class*=" icon-"], 
 h2 [class^="icon-"], h2 [class*=" icon-"],
 h3 [class^="icon-"], h3 [class*=" icon-"],
@@ -395,7 +396,7 @@ div.oae-thumbnail {
 }
 
 .oae-clip .oae-clip-content,
-.oae-clip .oae-clip-content button,
+.oae-clip .oae-clip-content button:not(.btn),
 .oae-clip .oae-clip-content i {
     color: #DBDBDB;
 }
@@ -411,7 +412,7 @@ div.oae-thumbnail {
     color: #FFF;
 }
 
-.oae-clip ul li button:hover {
+.oae-clip ul li button:not(.btn):hover {
     background-color: #000;
 }
 

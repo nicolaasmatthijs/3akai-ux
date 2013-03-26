@@ -372,7 +372,7 @@ div.oae-thumbnail i[class^="icon-"] {
             border-radius: 0 6px 6px;
 }
 
-.oae-clip .oae-clip-content button {
+.oae-clip .oae-clip-content button:not(.btn) {
     background: none;
     border: none;
     font-weight: 600;
@@ -433,17 +433,17 @@ div.oae-thumbnail i[class^="icon-"] {
 
 /* Clip actions */
 
-.oae-clip .oae-clip-content ul {
+.oae-clip .oae-clip-content > div > ul {
     list-style: none;
     margin: 0 10px;
     display: none;
 }
 
-.oae-clip .oae-clip-content ul li {
+.oae-clip .oae-clip-content > div > ul li {
     display: inline;
 }
 
-.oae-clip .oae-clip-content ul li button {
+.oae-clip .oae-clip-content > div > ul li button {
     -webkit-border-radius: 6px;
        -moz-border-radius: 6px;
             border-radius: 6px;
@@ -454,7 +454,7 @@ div.oae-thumbnail i[class^="icon-"] {
     text-align: center;
 }
 
-.oae-clip .oae-clip-content ul li button i {
+.oae-clip .oae-clip-content > div > ul li button i {
     display: block;
     margin: 0 auto 3px;
 }

@@ -223,6 +223,15 @@ input.search-query,
     background: -ms-linear-gradient(top, #A90329 0%, #8F0222 44%, #6D0019 100%);
 }
 
+/* AUTOSUGGEST */
+
+ul.as-selections input[type="text"], ul.as-selections input[type="text"]:focus {
+    margin-bottom: 0px;
+    -webkit-box-shadow: none;
+       -moz-box-shadow: none;
+            box-shadow: none;
+}
+
 /*****************
  ** MAIN LAYOUT **
  *****************/

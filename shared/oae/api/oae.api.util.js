@@ -473,11 +473,18 @@ define(['exports', 'require', 'jquery', 'underscore', 'oae.api.i18n', 'jquery.va
      *
      * The clickover will be opened straight away and will be shown below the trigger by default, unless configured otherwise.
      *
+     * The following options could be useful for widget clickovers:
+     *
+     * - options.onShown:  function that will be executed when the clickover is shown. The argument that will be passed into the callback
+     *                     is the root element of the current popover. This function can be useful to initiate things like autosuggests or
+     *                     refresh the cached widget $rootel for event bindings.
+     * - options.onHidden: function that will be executed when the clickover is hidden. This function can be useful to kill components in
+     *                     the clickover, like infinite scrolls.
+     *
      * @param  {Element|String}     $element      jQuery element or jQuery selector for that element that represents the element that triggers the clickover. The clickover will be positioned against this element.
      * @param  {Element|String}     $content      jQuery element or jQuery selector for the element that should be used as the content of the clickover.
      * @param  {Object}             [options]     JSON Object containing options to pass to the BootstrapX clickover component. It supports all of the standard options documented at http://twitter.github.com/bootstrap/javascript.html#popovers and http://www.leecarmichael.com/bootstrapx-clickover/examples.html#.
      * @return {Element}                          The root element of the generated clickover.
-     * @throws {Error}                            Error thrown when no trigger or content element have been provided
      */
     var clickover = exports.clickover = function($trigger, $content, options) {
         if (!$trigger) {
@@ -500,16 +507,56 @@ define(['exports', 'require', 'jquery', 'underscore', 'oae.api.i18n', 'jquery.va
         };
         options = $.extend(defaultOptions, options);
 
+        // Cache the `onShown` callback if it has been provided, so the clickover's
+        // root element can be passed into the `onShown` callback.
+        if (options.onShown) {
+            showCallback = options.onShown;
+            options.onShown = function() {
+                showCallback(this.$tip);
+            }
+        }
+
         // Set the HTML of the content element as the content of the clickover
         options.content = $content.html();
 
         // Initiate the clickover
         $trigger.clickover(options);
+
         // Show the clickover
         $trigger.trigger('click');
-        // Return the root element of the clickover, which is automatically placed
-        // as the next sibling of the trigger
-        return $trigger.next();
+    };
+
+    /////////////////
+    // AUTOSUGGEST //
+    /////////////////
+
+    /**
+     * TODO
+     */
+    var autoSuggest = exports.autoSuggest = function($element, resourceTypes) {
+        if (!$element) {
+            throw new Error('A valid element should be provided');
+        } else if (!resourceTypes) {
+            throw new Error('At least 1 resourceType should be provided');
+        }
+
+        $element.autoSuggest('/api/search/general', {
+            'selectedValuesProp': 'id',
+            'selectedItemProp': 'displayName',
+            'searchObjProps': 'displayName',
+            'extraParams': {
+                'resourceTypes': resourceTypes
+            },
+            'minChars': 2,
+            'neverSubmit': true,
+            'showResultListWhenNoMatch': true,
+            'canGenerateNewSelections': false,
+            'preventPropagationOnEscape': true,
+            'usePlaceholder': true,
+            'afterRequest': function(data){
+                return data.results;
+            }
+        });
     };
 
     ////////////////////
