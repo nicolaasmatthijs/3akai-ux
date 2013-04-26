@@ -13,7 +13,7 @@
  * permissions and limitations under the License.
  */
 
-define(['exports', 'jquery', 'underscore'], function(exports, $, _) {
+define(['exports', 'jquery', 'underscore', 'oae.api.i18n'], function(exports, $, _, i18nAPI) {
 
     /**
      * Get a full content profile.
@@ -39,7 +39,7 @@ define(['exports', 'jquery', 'underscore'], function(exports, $, _) {
             }
         });
     };
-    
+
     /**
      * Create a new link.
      * 
@@ -83,7 +83,7 @@ define(['exports', 'jquery', 'underscore'], function(exports, $, _) {
             }
         });
     };
-    
+
     /**
      * Create a new file.
      * 
@@ -205,7 +205,7 @@ define(['exports', 'jquery', 'underscore'], function(exports, $, _) {
             }
         });
     };
-    
+
     /**
      * Update a content item's metadata.
      * 
@@ -234,7 +234,7 @@ define(['exports', 'jquery', 'underscore'], function(exports, $, _) {
             }
         });
     };
-    
+
     /**
      * Delete a content item through the REST API.
      * 
@@ -243,7 +243,7 @@ define(['exports', 'jquery', 'underscore'], function(exports, $, _) {
      * @param  {Object}        callback.err        Error object containing error code and error message
      */
     var deleteContent = exports.deleteContent = function(contentId, callback) {};
-    
+
     /**
      * Get the viewers and managers of a content item.
      * 
@@ -305,7 +305,7 @@ define(['exports', 'jquery', 'underscore'], function(exports, $, _) {
             }
         });
     };
-    
+
     /**
      * Share a content item.
      * 
@@ -338,7 +338,7 @@ define(['exports', 'jquery', 'underscore'], function(exports, $, _) {
             }
         });
     };
-    
+
     /**
      * Get a principal library.
      * 
@@ -371,6 +371,176 @@ define(['exports', 'jquery', 'underscore'], function(exports, $, _) {
             }
         });
     };
+
+
+    ///////////////////////
+    // Content utilities //
+    ///////////////////////
+
+    // Constant that holds regular expressions for the different mimeTypes that might be returned by the
+    // back-end, allowing for these mimeTypes to be transformed into a human readable mime type description.
+    var MIMETYPES = {
+        'archive': {
+            'description': '__MSG__ARCHIVE__',
+            'icon': '/dev/images/mimetypes/zip.png',
+            'regex': [
+                'application/zip',
+                'application/x-zip',
+                'application/x-zip*'
+            ]
+        },
+        'audio': {
+            'description': '__MSG__AUDIO__',
+            'icon': '/dev/images/mimetypes/sound.png',
+            'regex': [
+                'audio/*',
+                'kaltura/audio'
+            ]
+        },
+        'collabdoc': {
+            // The document type will be used for collaborative documents
+            'description': '__MSG__DOCUMENT__'
+        },
+        'image': {
+            'description': '__MSG__IMAGE__',
+            'icon': '/dev/images/mimetypes/images.png',
+            'regex': 'image/*'
+        },
+        'flash': {
+            'description': '__MSG__FLASH__',
+            'icon': '/dev/images/mimetypes/swf.png',
+            'regex': 'application/x-shockwave-flash'
+        },
+        'html': {
+            'description': '__MSG__HTML_DOCUMENT__',
+            'icon': '/dev/images/mimetypes/html.png',
+            'regex': 'text/html'
+        },
+        'link': {
+            // The link type will be used for added links
+            'description': '__MSG__LINK'
+        },
+        'other': {
+            // The other type will be used for all unrecognized mimeTypes
+            'description': '__MSG__OTHER__',
+            'icon': '/dev/images/mimetypes/unknown.png'
+        },
+        'pdf': {
+            'description': '__MSG__PDF__',
+            'icon': '/dev/images/mimetypes/pdf.png',
+            'regex': [
+                'application/pdf',
+                'application/x-download',
+                'application/x-pdf'
+            ]
+        },
+        'presentation': {
+            'description': '__MSG__PRESENTATION__',
+            'icon': '/dev/images/mimetypes/pps.png',
+            'regex': [
+                'application/vnd.ms-powerpoint',
+                'application/vnd.oasis.opendocument.presentation',
+                'application/vnd.openxmlformats-officedocument.presentation*'
+            ]
+        },
+        'spreadsheet': {
+            'description': '__MSG__SPREADSHEET',
+            'icon': '/dev/images/mimetypes/spreadsheet.png',
+            'regex': [
+                'application/vnd.oasis.opendocument.spreadsheet',
+                'application/vnd.openxmlformats-officedocument.spreadsheet*',
+                'application/vnd.ms-excel'
+            ]
+        },
+        'text': {
+            'description': '__MSG__TEXT_DOCUMENT__',
+            'icon': '/dev/images/mimetypes/txt.png',
+            'regex': [
+                'text/plain',
+                'text/rtf'
+            ]
+        },
+        'video': {
+            'description': '__MSG__VIDEO__',
+            'icon': '/dev/images/mimetypes/video.png',
+            'regex': [
+                'video/*',
+                'kaltura/video'
+            ]
+        },
+        'word': {
+            'description': '__MSG__WORD_DOCUMENT__',
+            'icon': '/dev/images/mimetypes/doc.png',
+            'regex': [
+                'application/doc',
+                'application/msword',
+                'application/vnd.openxmlformats-officedocument.word*',
+                'application/vnd.oasis.opendocument.text'
+            ]
+        }
+    };
+
+    /**
+     * Get a human readable mimeType description and icon for a piece of content. 
+     * Unrecognized mimeTypes will default to the `other` type.
+     * 
+     * @param  {Content}        contentObj              Content object to get the mimetype information for. This is a standard content object returned by the list or search feeds
+     * @return {Object}         mimeType                Object containing a human readable mimeType description and a link to a mimeType icon
+     *                          mimeType.description    Human readable mimeType description
+     *                          mimeType.icon           Link to the icon representing the mimeType
+     */
+    var getMimeType = exports.getMimeType = function(contentObj) {
+        if (!contentObj) {
+            throw new Error('A content object should be provided');
+        }
+
+        var mimeType = null;
+
+        // Only files will have an actual mimeType. For all of these, we will run through the available
+        // mimeType mappings and check if the content mimeType matches any of the regular expressions for
+        // the mimeType mapping.
+        if (contentObj.resourceSubType === 'file') {
+            var mime = contentObj.mime || '';
+            $.each(MIMETYPES, function(mimeTypeMappingId, mimeTypeMapping) {
+                // Some mimeType mappings might not have any regular expressions. No need to check for those.
+                if (mimeTypeMapping.regex) {
+                    // When only a single regex is available for a mimeType mapping, a string can be provided
+                    // as well.Ensure that the mimeType mapping regex is an array. 
+                    var regex = _.isArray(mimeTypeObj.regex) ? mimeTypeObj.regex : [mimeTypeObj.regex];
+                    // Parse the provided regular expressions into a single regular expression and match
+                    // on the content's mimeType
+                    var joinedRegex = new RegExp(regex.join('|'), 'i');
+                    if (mime.match(joinedRegex)) {
+                        mimeType = mimeTypeObj;
+                    }
+                }
+            });
+        // Links and collabdocs
+        } else {
+            mimeType = MIMETYPES[contentObj.resourceSubType];
+        }
+
+        // If no mimeType mapping has matches the content's mimeType, we can default back
+        // to the `other` mimeType.
+        if (!mimeType) {
+            mimeType = MIMETYPES.other;
+        }
+
+        // Return a compact mimeType object. We also need to translate the
+        // mimeType description into the user's language.
+        return {
+            'description': i18nAPI.translate(mimeType.description),
+            'icon': mimeType.icon
+        }
+    };
+
+    /**
+     * Get the filesize of a file as a human readable string. This will only be done for uploaded files, 
+     * other content items will remain unchanged.
+     * 
+     * @param  {Content}        contentObj          Content object for which to set the readable filesize information. This object will be modified to include the mimetype info.
+     */
+    var getFileSize = exports.getFileSize = function(contentObj) {};
 
     //////////////////////
     // Content comments //
@@ -473,37 +643,5 @@ define(['exports', 'jquery', 'underscore'], function(exports, $, _) {
             }
         });
     };
-
-    /**
-     * Set the thumbnail URL of a piece of content. For links and Sakai Docs, this will just be a thumbnail representing their type.
-     * For uploaded files, we will first check if a thumbnail URL is already set on the back-end side (which will use the generated
-     * previews). If this is not present, we add a icon URL based on the file's mimeType
-     * 
-     * @param  {Content}        contentObj          Content object for which to set the thumbnail. This object will be modified to include the thumbnail URL.
-     * @api private
-     */
-    var setThumbnail = function(contentObj) {};
-    
-    /**
-     * Sets the mime type information on a piece of content, based on the mimetype mapping above. 
-     * The mime type information will contain the following items:
-     * 
-     * - cssClass: CSS Class that can be used to show a small 16x16 icon
-     * - description: Describes the type of content this is
-     * 
-     * Unrecognized content types or mimetypes will default to the 'Other' type.
-     * 
-     * @param  {Content}        contentObj          Content object for which to set the mimetype information. This object will be modified to include the mimetype info.
-     * @api private
-     */
-    var setMimeTypeInfo = function(contentObj) {};
-    
-    /**
-     * Sets the filesize of a file to be a human readable string. This will only be done for uploaded files, other content items will remain unchanged.
-     * 
-     * @param  {Content}        contentObj          Content object for which to set the readable filesize information. This object will be modified to include the mimetype info.
-     * @api private
-     */
-    var setFileSize = function(contentObj) {};
 
 });
