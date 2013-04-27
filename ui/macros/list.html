@@ -21,7 +21,7 @@
                 ${renderThumbnail(entityData, false, true)}
                 <div>
                     {if resourceType !== 'user'}
-                        <i class="icon-oae-${entityData.visibility} pull-left"></i>
+                        <i class="icon-oae-${entityData.visibility} pull-right"></i>
                     {/if}
                     ${renderMetadata(entityData, metadata)}
                 </div>
@@ -125,11 +125,9 @@
         {if entityData.resourceType === 'user'}
             {var metadata = entityData.tenant.displayName}
         {elseif entityData.resourceType === 'group'}
-            <!-- TODO: Add proper metadata and i18n -->
-            {var metadata = 'Group'}
+            {var metadata = oae.api.i18n.translate('__MSG__GROUP__')}
         {elseif entityData.resourceType === 'content'}
-            <!-- TODO: Add proper document type and i18n -->
-            {var metadata = 'Other document'}
+            {var metadata = oae.api.content.getMimeType(entityData).description}
         {/if}
     {/if}
 

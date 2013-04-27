@@ -385,8 +385,8 @@ define(['exports', 'jquery', 'underscore', 'oae.api.i18n'], function(exports, $,
             'icon': '/dev/images/mimetypes/zip.png',
             'regex': [
                 'application/zip',
-                'application/x-zip',
-                'application/x-zip*'
+                'application/x-zip*',
+                'application/x-tar'
             ]
         },
         'audio': {
@@ -400,6 +400,11 @@ define(['exports', 'jquery', 'underscore', 'oae.api.i18n'], function(exports, $,
         'collabdoc': {
             // The document type will be used for collaborative documents
             'description': '__MSG__DOCUMENT__'
+        },
+        'css': {
+            'description': '__MSG__CSS__',
+            'icon': '/dev/images/mimetypes/images.png',
+            'regex': 'text/css'
         },
         'image': {
             'description': '__MSG__IMAGE__',
@@ -418,7 +423,7 @@ define(['exports', 'jquery', 'underscore', 'oae.api.i18n'], function(exports, $,
         },
         'link': {
             // The link type will be used for added links
-            'description': '__MSG__LINK'
+            'description': '__MSG__LINK__'
         },
         'other': {
             // The other type will be used for all unrecognized mimeTypes
@@ -444,7 +449,7 @@ define(['exports', 'jquery', 'underscore', 'oae.api.i18n'], function(exports, $,
             ]
         },
         'spreadsheet': {
-            'description': '__MSG__SPREADSHEET',
+            'description': '__MSG__SPREADSHEET__',
             'icon': '/dev/images/mimetypes/spreadsheet.png',
             'regex': [
                 'application/vnd.oasis.opendocument.spreadsheet',
@@ -459,6 +464,11 @@ define(['exports', 'jquery', 'underscore', 'oae.api.i18n'], function(exports, $,
                 'text/plain',
                 'text/rtf'
             ]
+        },
+        'xml': {
+            'description': '__MSG__XML__',
+            'icon': '/dev/images/mimetypes/txt.png',
+            'regex': 'text/xml'
         },
         'video': {
             'description': '__MSG__VIDEO__',
@@ -475,7 +485,8 @@ define(['exports', 'jquery', 'underscore', 'oae.api.i18n'], function(exports, $,
                 'application/doc',
                 'application/msword',
                 'application/vnd.openxmlformats-officedocument.word*',
-                'application/vnd.oasis.opendocument.text'
+                'application/vnd.oasis.opendocument.text',
+                'application/octet-stream'
             ]
         }
     };
@@ -494,30 +505,34 @@ define(['exports', 'jquery', 'underscore', 'oae.api.i18n'], function(exports, $,
             throw new Error('A content object should be provided');
         }
 
+        // The `oae:resourceSubType` property is used by the activity feed
+        var resourceSubType = contentObj.resourceSubType || contentObj['oae:resourceSubType'];
         var mimeType = null;
 
         // Only files will have an actual mimeType. For all of these, we will run through the available
         // mimeType mappings and check if the content mimeType matches any of the regular expressions for
         // the mimeType mapping.
-        if (contentObj.resourceSubType === 'file') {
-            var mime = contentObj.mime || '';
+        if (resourceSubType === 'file') {
+            // The `oae:mimeType` property is used by the activity feed
+            var mime = contentObj.mime || contentObj['oae:mimeType'] || '';
             $.each(MIMETYPES, function(mimeTypeMappingId, mimeTypeMapping) {
                 // Some mimeType mappings might not have any regular expressions. No need to check for those.
                 if (mimeTypeMapping.regex) {
                     // When only a single regex is available for a mimeType mapping, a string can be provided
-                    // as well.Ensure that the mimeType mapping regex is an array. 
-                    var regex = _.isArray(mimeTypeObj.regex) ? mimeTypeObj.regex : [mimeTypeObj.regex];
+                    // as well.Ensure that the mimeType mapping regex is an array.
+                    var regex = mimeTypeMapping.regex; 
+                    regex = _.isArray(regex) ? regex : [regex];
                     // Parse the provided regular expressions into a single regular expression and match
                     // on the content's mimeType
                     var joinedRegex = new RegExp(regex.join('|'), 'i');
                     if (mime.match(joinedRegex)) {
-                        mimeType = mimeTypeObj;
+                        mimeType = mimeTypeMapping;
                     }
                 }
             });
         // Links and collabdocs
         } else {
-            mimeType = MIMETYPES[contentObj.resourceSubType];
+            mimeType = MIMETYPES[resourceSubType];
         }
 
         // If no mimeType mapping has matches the content's mimeType, we can default back
