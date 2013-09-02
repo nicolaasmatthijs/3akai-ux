@@ -31,7 +31,7 @@ define(['exports', 'jquery', 'underscore', 'oae.core', '/admin/js/admin.skin.js'
         currentContext = _currentContext;
 
         loadConfiguration(function() {
-            renderModules();
+            renderConfiguration();
             // Initialize the skinning related functionality
             adminSkin.init(currentContext, configuration);
         });
@@ -41,12 +41,12 @@ define(['exports', 'jquery', 'underscore', 'oae.core', '/admin/js/admin.skin.js'
     /**
      * Render the available configuration modules and their configured values
      */
-    var renderModules = function() {
-        oae.api.util.template().render($('#admin-modules-template'), {
+    var renderConfiguration = function() {
+        oae.api.util.template().render($('#admin-configuration-template'), {
             'schema': configurationSchema,
             'configuration': configuration,
             'context': currentContext
-        }, $('#admin-modules-container'));
+        }, $('#admin-configuration-container'));
     };
 
     /**
@@ -141,12 +141,12 @@ define(['exports', 'jquery', 'underscore', 'oae.core', '/admin/js/admin.skin.js'
     };
 
     /**
-     * Add event binding to the module related functionality
+     * Add event binding to the configuration related functionality
      */
     var addBinding = function() {
-        // Modules toggle
+        // Modules configuration toggle
         $(document).on('click', '.admin-module-configuration-toggle-button', adminUtil.toggleContainer);
-        // Change config values
+        // Change configuration values
         $(document).on('submit', '.admin-module-configuration-form', updateConfiguration);
     };
 

@@ -60,12 +60,8 @@ body {
     padding-bottom: 120px;
 }
 
-#admin-content h2 {
-    font-size: 25px;
-    color: #0088CC;
-    font-weight: normal;
-    margin-top: 0px;
-    margin-bottom: 20px;
+#admin-content {
+    margin-top: 10px;
 }
 
 /* Tenant list */
@@ -154,6 +150,16 @@ td form {
     border-top: 1px solid #DDD;
     max-width: none;
     padding: 12px;
+}
+
+/* User management */
+
+.oae-list-options {
+    border-bottom: none;
+}
+
+ul.oae-list.oae-list-grid > li.oae-list-actions {
+    background-color: #FFF;
 }
 
 /* Skinning configuration */

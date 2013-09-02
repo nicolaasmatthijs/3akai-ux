@@ -7,6 +7,7 @@ Thumbs.db
 dump.rdb
 target/
 node_modules/*
+!node_modules/oae-admin
 !node_modules/oae-core
 nginx/nginx.*
 !nginx/nginx.conf

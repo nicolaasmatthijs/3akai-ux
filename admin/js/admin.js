@@ -13,7 +13,7 @@
  * permissions and limitations under the License.
  */
 
-require(['jquery', 'underscore', 'oae.core', '/admin/js/admin.tenants.js', '/admin/js/admin.config.js', 'jquery.history'], function($, _, oae, adminTenants, adminConfig) {
+require(['jquery', 'underscore', 'oae.core', 'jquery.history'], function($, _, oae) {
 
     // Variable that will be used to keep track of the current tenant
     var currentContext = null;
@@ -177,6 +177,25 @@ require(['jquery', 'underscore', 'oae.core', '/admin/js/admin.tenants.js', '/adm
     };
 
     /**
+     * The `oae.context.get` or `oae.context.get.<widgetname>` event can be sent by widgets
+     * to get hold of the current context (i.e. current tenant) and the list of available tenants.
+     * In the first case, a `oae.context.send` event will be sent out as a broadcast to all widgets
+     * listening for the context event. In the second case, a `oae.context.send.<widgetname>` event
+     * will be sent out and will only be caught by that particular widget. In case the widget
+     * has put in its context request before the profile was loaded, we also broadcast it out straight away.
+     */
+    var setUpContext = function() {
+        $(document).on('oae.context.get', function(ev, widgetId) {
+            if (widgetId) {
+                $(document).trigger('oae.context.send.' + widgetId, currentContext, allTenants);
+            } else {
+                $(document).trigger('oae.context.send', currentContext, allTenants);
+            }
+        });
+        $(document).trigger('oae.context.send', currentContext, allTenants);
+    };
+
+    /**
      * Add binding to the core admin UI functionality
      */
     var addBinding = function() {
@@ -214,11 +233,15 @@ require(['jquery', 'underscore', 'oae.core', '/admin/js/admin.tenants.js', '/adm
         // Determine the tenant for which we want to see the admin UI
         getCurrentContext(function() {
 
+            // Set up the events that can be used by widgets to retrieve
+            // the current tenant context
+            setUpContext();
+
             // Render the header and the footer
             initializeHeader();
 
             // Initialize the tenants related functionality
-            adminTenants.init(currentContext, allTenants);
+            //adminTenants.init(currentContext, allTenants);
 
             if (oae.data.me.anon) {
                 setUpLogin();
@@ -228,7 +251,10 @@ require(['jquery', 'underscore', 'oae.core', '/admin/js/admin.tenants.js', '/adm
 
                 // Initialize the config related functionality. This will also initialize the
                 // skinning functionality
-                adminConfig.init(currentContext);
+            //    adminConfig.init(currentContext);
+
+                // Initialize the user management related functionality
+            //    adminUserManagement.init(currentContext);
             }
         });
     };

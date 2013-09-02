@@ -55,13 +55,11 @@
 
                     <div id="admin-views">
                         <div id="admin-tenants-container" class="hide"><!-- --></div>
-                        <div id="admin-modules-container" class="hide"><!-- --></div>
+                        <div id="admin-configuration-container" class="hide"><!-- --></div>
+                        <div id="admin-usermanagement-container" class="hide"><!-- --></div>
                         <div id="admin-skinning-container" class="hide"><!-- --></div>
                     </div>
 
-                    <div id="admin-error-container"><!-- --></div>
-                    <div id="admin-warning-container"><!-- --></div>
-                    <div id="admin-success-container"><!-- --></div>
                     <div id="admin-confirmation-container"><!-- --></div>
                 </div>
             </div>
@@ -97,9 +95,14 @@
                         {/if}
                     </a>
                 </li>
-                <li data-id="modules">
-                    <a title="Module configuration" href="?view=modules">
-                        <i class="icon-cogs"></i> Modules
+                <li data-id="configuration">
+                    <a title="Module configuration" href="?view=configuration">
+                        <i class="icon-cogs"></i> Configuration
+                    </a>
+                </li>
+                <li data-id="usermanagement">
+                    <a title="User management" href="?view=usermanagement">
+                        <i class="icon-user"></i> User management
                     </a>
                 </li>
                 {if !context.isGlobalAdminServer}
@@ -134,7 +137,13 @@
         --></div>
 
         <div id="admin-tenants-template"><!--
-            <h2>Tenants</h2>
+            <div class="oae-list-options">
+                <div>
+                    <button class="btn oae-list-options-toggle">
+                        <h2>Tenants</h2>
+                    </button>
+                </div>
+            </div>
             {var isOnGlobalAdminServer = context.isGlobalAdminServer || context.isTenantOnGlobalAdminServer}
             {if _.keys(tenants).length > 0}
                 <table class="table table-striped">
@@ -254,7 +263,14 @@
             {/if}
         --></div>
 
-        <div id="admin-modules-template"><!--
+        <div id="admin-configuration-template"><!--
+            <div class="oae-list-options">
+                <div>
+                    <button class="btn oae-list-options-toggle">
+                        <h2>Configuration</h2>
+                    </button>
+                </div>
+            </div>
             <div class="admin-container-striped">
                 {for module in schema}
                     <div class="admin-module-configuration-container">
@@ -313,6 +329,47 @@
                     </div>
                 {/for}
             </div>
+        --></div>
+
+        <div id="admin-usermanagement-template"><!--
+            <div class="oae-list-options">
+                <div>
+                    <button class="btn oae-list-options-toggle">
+                        <h2>Users</h2>
+                    </button>
+                    <div class="pull-right">
+                        <form class="form-search" id="admin-usermanagement-search-form">
+                            <label class="oae-aural-text" for="admin-usermanagement-search-query">Narrow by keyword</label>
+                            <input type="text" id="admin-usermanagement-search-query" class="search-query" placeholder="Narrow by keyword">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <ul class="oae-list oae-list-grid"></ul>
+        --></div>
+
+        <div id="admin-usermanagement-list-template"><!--
+            {for user in results}
+                ${listItem(user)}
+            {/for}
+        --></div>
+
+        <div id="admin-usermanagement-list-actions-template"><!--
+            <li class="oae-list-actions oae-list-actions-multiple">
+                <div class="oae-thumbnail oae-thumbnail-large icon-oae-user"></div>
+                <ul>
+                    <li>
+                        <button type="button" class="btn">
+                            <i class="icon-plus-sign pull-left"></i>Create new
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn oae-trigger-importusers">
+                            <i class="icon-signin pull-left"></i>Import from CSV
+                        </button>
+                    </li>
+                </ul>
+            </li>
         --></div>
 
         <div id="admin-skinning-template"><!--
