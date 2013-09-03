@@ -64,55 +64,7 @@ body {
     margin-top: 10px;
 }
 
-/* Tenant list */
 
-.table-striped td.admin-tenants-visit {
-    width: 20px;
-}
-
-.table-striped td.admin-tenants-visit i {
-    font-size: 18px;
-    position: relative;
-    top: 2px;
-}
-
-.table-striped tbody tr:nth-child(2n+1) td,
-.table-striped tbody tr:nth-child(2n+1) th,
-.admin-container-striped > div:nth-child(2n+1) {
-    background: #F8F8F8; /* Old browsers */
-    background: -moz-linear-gradient(top, #F8F8F8 0%, #F0f0f0 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#F8F8F8), color-stop(100%,#F0f0f0)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top, #F8F8F8 0%,#F0f0f0 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top, #F8F8F8 0%,#F0f0f0 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top, #F8F8F8 0%,#F0f0f0 100%); /* IE10+ */
-    background: linear-gradient(to bottom, #F8F8F8 0%,#F0f0f0 100%); /* W3C */
-    max-width: 150px;
-    vertical-align: middle;
-}
-
-.table-striped tbody tr:nth-child(2n+2) td,
-.table-striped tbody tr:nth-child(2n+2) th,
-.admin-container-striped > div:nth-child(2n+2) {
-    background-color: #FFF;
-    max-width: 150px;
-    vertical-align: middle;
-}
-
-td.jeditable-container:hover {
-    cursor: pointer;
-    color: #666;
-    background: #3B3B3B !important; /* Old browsers */
-    background: -moz-linear-gradient(top, #DDD 0%, #CCC 100%) !important; /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#DDD), color-stop(100%,#CCC)) !important; /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top, #DDD 0%,#CCC 100%) !important; /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top, #DDD 0%,#CCC 100%) !important; /* Opera 11.10+ */
-    background: -ms-linear-gradient(top, #DDD 0%,#CCC 100%) !important; /* IE10+ */
-    background: linear-gradient(to bottom, #DDD 0%,#CCC 100%) !important; /* W3C */
-}
-
-td form {
-    margin: 0;
-}
 
 /* Module configuration */
 

@@ -187,12 +187,12 @@ require(['jquery', 'underscore', 'oae.core', 'jquery.history'], function($, _, o
     var setUpContext = function() {
         $(document).on('oae.context.get', function(ev, widgetId) {
             if (widgetId) {
-                $(document).trigger('oae.context.send.' + widgetId, currentContext, allTenants);
+                $(document).trigger('oae.context.send.' + widgetId, [currentContext, allTenants]);
             } else {
-                $(document).trigger('oae.context.send', currentContext, allTenants);
+                $(document).trigger('oae.context.send', [currentContext, allTenants]);
             }
         });
-        $(document).trigger('oae.context.send', currentContext, allTenants);
+        $(document).trigger('oae.context.send', [currentContext, allTenants]);
     };
 
     /**
@@ -221,6 +221,17 @@ require(['jquery', 'underscore', 'oae.core', 'jquery.history'], function($, _, o
     };
 
     /**
+     * Initializes the footer and render the available tenants in the footer
+     */
+    var initializeFooter = function() {
+        // Render the footer
+        oae.api.util.template().render($('#admin-footer-template'), {
+            'context': currentContext,
+            'tenants': allTenants
+        }, $('#admin-footer-container'));
+    }
+
+    /**
      * Initializes the admin UI
      */
     var initializeAdminUI = function() {
@@ -239,22 +250,14 @@ require(['jquery', 'underscore', 'oae.core', 'jquery.history'], function($, _, o
 
             // Render the header and the footer
             initializeHeader();
-
-            // Initialize the tenants related functionality
-            //adminTenants.init(currentContext, allTenants);
+            initializeFooter();
 
             if (oae.data.me.anon) {
+                // Show the login form
                 setUpLogin();
             } else {
                 // Initialize left hand navigation
                 initializeNavigation();
-
-                // Initialize the config related functionality. This will also initialize the
-                // skinning functionality
-            //    adminConfig.init(currentContext);
-
-                // Initialize the user management related functionality
-            //    adminUserManagement.init(currentContext);
             }
         });
     };
