@@ -13,7 +13,7 @@
  * permissions and limitations under the License.
  */
 
-require(['jquery', 'underscore', 'oae.core', 'jquery.history'], function($, _, oae) {
+require(['jquery', 'underscore', 'oae.core', '/admin/js/admin.usermanagement.js', 'jquery.history'], function($, _, oae, adminUserManagement) {
 
     // Variable that will be used to keep track of the current tenant
     var currentContext = null;
@@ -258,6 +258,7 @@ require(['jquery', 'underscore', 'oae.core', 'jquery.history'], function($, _, o
             } else {
                 // Initialize left hand navigation
                 initializeNavigation();
+                adminUserManagement.init(currentContext);
             }
         });
     };

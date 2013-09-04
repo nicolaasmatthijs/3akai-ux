@@ -13,7 +13,7 @@
  * permissions and limitations under the License.
  */
 
-define(['exports', 'jquery', 'underscore', 'oae.core', '/admin/js/admin.skin.js', '/admin/js/admin.util.js'], function(exports, $, _, oae, adminSkin, adminUtil) {
+define(['exports', 'jquery', 'underscore', 'oae.core'], function(exports, $, _, oae) {
 
     // The user management container
     var $rootel = $('#admin-usermanagement-container');
