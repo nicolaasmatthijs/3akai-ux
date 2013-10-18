@@ -45,10 +45,12 @@ define(['jquery'], function ($) {
             var checked = $(this).is(':checked');
             var $listCheckboxes = $('.oae-list input[type="checkbox"]', $listContainer);
             $listCheckboxes.prop('checked', checked);
-            // Enable or disable the list option action buttons. We only change the state
-            // when there is at least 1 item in the list that can be checked.
-            if ($listCheckboxes.length > 0) {
-                $('.oae-list-options-actions > .btn', $listContainer).prop('disabled', !checked);
+            // Enable or disable the list option action buttons. When there are no list items, we always
+            // disable the list option action buttons.
+            if ($listCheckboxes.length > 0 && checked) {
+                $('.oae-list-options-actions > .btn', $listContainer).prop('disabled', false);
+            } else {
+                $('.oae-list-options-actions > .btn', $listContainer).prop('disabled', true);
             }
         });
 
