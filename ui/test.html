@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+
+        <meta name="viewport" content="width=device-width">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <noscript>
+            <meta http-equiv="Refresh" content="1; URL=/noscript">
+        </noscript>
+
+        <!-- CORE CSS -->
+        <link rel="stylesheet" type="text/css" href="/shared/oae/css/oae.core.css" />
+        <link rel="stylesheet" type="text/css" href="/api/ui/skin" />
+
+    </head>
+    <body>
+
+        <!-- HEADER -->
+        <div data-widget="topnavigation"><!-- --></div>
+
+        <!-- BODY -->
+        <main class="oae-main-content" role="main">
+
+            <ul id="test-container-1" class="oae-list oae-list-grid"><!-- --></ul>
+            <br/><br/>
+            <ul id="test-container-2" class="oae-list oae-list-details"><!-- --></ul>
+            <br/><br/>
+            <ul id="test-container-3" class="oae-list oae-list-compact"><!-- --></ul>
+
+            <div id="test-template"><!--
+                {macro singleAction()}
+                    <button type="button" class="btn btn-link">
+                        <i class="icon-trash"></i><span class="oae-aural-text">Delete</span>
+                    </button>
+                {/macro}
+
+                {macro tripleAction()}
+                    <button type="button" class="btn btn-link">
+                        <i class="icon-trash"></i><span class="oae-aural-text">Delete</span>
+                    </button>
+                    <button type="button" class="btn btn-link">
+                        <i class="icon-warning-sign"></i><span class="oae-aural-text">Warning</span>
+                    </button>
+                    <button type="button" class="btn btn-link">
+                        <i class="icon-share"></i><span class="oae-aural-text">Share</span>
+                    </button>
+                {/macro}
+
+                ${listItem(content, null, false, false, null)}
+                ${listItem(content, null, true, false, null)}
+                ${listItem(content, null, false, false, singleAction)}
+                ${listItem(content, null, true, false, singleAction)}
+                ${listItem(content, null, false, false, tripleAction)}
+                ${listItem(content, null, true, false, tripleAction)}
+                ${listItem(content, 'REALLY REALLY REALLY REALLY REALLY REALLY REALLY REALLY REALLY REALLY REALLY REALLY LONG METADATA', false, false, null)}
+                ${listItem(content, 'REALLY REALLY REALLY REALLY REALLY REALLY REALLY REALLY REALLY REALLY REALLY REALLY LONG METADATA', true, false, null)}
+                ${listItem(content, 'REALLY REALLY REALLY REALLY REALLY REALLY REALLY REALLY REALLY REALLY REALLY REALLY LONG METADATA', false, false, singleAction)}
+                ${listItem(content, 'REALLY REALLY REALLY REALLY REALLY REALLY REALLY REALLY REALLY REALLY REALLY REALLY LONG METADATA', true, false, singleAction)}
+                ${listItem(content, 'REALLY REALLY REALLY REALLY REALLY REALLY REALLY REALLY REALLY REALLY REALLY REALLY LONG METADATA', false, false, tripleAction)}
+                ${listItem(content, 'REALLY REALLY REALLY REALLY REALLY REALLY REALLY REALLY REALLY REALLY REALLY REALLY LONG METADATA', true, false, tripleAction)}
+                ${listItem(content2, null, false, false, null)}
+                ${listItem(content2, null, true, false, null)}
+                ${listItem(content2, null, false, false, singleAction)}
+                ${listItem(content2, null, true, false, singleAction)}
+                ${listItem(content2, null, false, false, tripleAction)}
+                ${listItem(content2, null, true, false, tripleAction)}
+                ${listItem(content2, 'REALLY REALLY REALLY REALLY REALLY REALLY REALLY REALLY REALLY REALLY REALLY REALLY LONG METADATA', false, false, null)}
+                ${listItem(content2, 'REALLY REALLY REALLY REALLY REALLY REALLY REALLY REALLY REALLY REALLY REALLY REALLY LONG METADATA', true, false, null)}
+                ${listItem(content2, 'REALLY REALLY REALLY REALLY REALLY REALLY REALLY REALLY REALLY REALLY REALLY REALLY LONG METADATA', false, false, singleAction)}
+                ${listItem(content2, 'REALLY REALLY REALLY REALLY REALLY REALLY REALLY REALLY REALLY REALLY REALLY REALLY LONG METADATA', true, false, singleAction)}
+                ${listItem(content2, 'REALLY REALLY REALLY REALLY REALLY REALLY REALLY REALLY REALLY REALLY REALLY REALLY LONG METADATA', false, false, tripleAction)}
+                ${listItem(content2, 'REALLY REALLY REALLY REALLY REALLY REALLY REALLY REALLY REALLY REALLY REALLY REALLY LONG METADATA', true, false, tripleAction)}
+                ${listItem(content, false, false, false, null)}
+                ${listItem(content, false, true, false, null)}
+                ${listItem(content, false, false, false, singleAction)}
+                ${listItem(content, false, true, false, singleAction)}
+                ${listItem(content, false, false, false, tripleAction)}
+                ${listItem(content, false, true, false, tripleAction)}
+                ${listItem(content2, false, false, false, null)}
+                ${listItem(content2, false, true, false, null)}
+                ${listItem(content2, false, false, false, singleAction)}
+                ${listItem(content2, false, true, false, singleAction)}
+                ${listItem(content2, false, false, false, tripleAction)}
+                ${listItem(content2, false, true, false, tripleAction)}
+            --></div>
+
+        </main>
+
+        <!-- FOOTER -->
+        <div data-widget="footer"><!-- --></div>
+
+        <!-- JAVASCRIPT -->
+        <script data-main="/shared/oae/api/oae.bootstrap.js" data-loadmodule="/ui/js/test.js" src="/shared/vendor/js/requirejs/require-jquery.js"></script>
+
+    </body>
+</html>
