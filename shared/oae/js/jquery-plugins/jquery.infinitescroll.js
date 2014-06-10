@@ -230,6 +230,14 @@ define(['jquery', 'underscore', 'oae.api.util', 'oae.api.i18n', 'oae.api.l10n'],
                     $listContainer.append(templateOutput);
                 }
 
+                // Links with no `href` value are usually references to private items. Therefore,
+                // we replace them with a `span`
+                $('a[href=]', $listContainer).each(function() {
+                    var $emptyLink = $(this);
+                    var $replaceSpan = $('<span>').text($emptyLink.text());
+                    $emptyLink.replaceWith($replaceSpan);
+                });
+
                 // Call the post renderer if it has been provided
                 if (options.postRenderer) {
                     options.postRenderer(data);
